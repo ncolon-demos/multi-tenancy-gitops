@@ -18,15 +18,15 @@ spec:
     helm:
       values: |
         refarch-machinesets:
-          infrastructureId: "${INFRASTRUCTURE_ID}"
+          infrastructureId: "z2g-cluster2-bpdl7"
           # cloudProvider.name set to aws, azure or vsphere
           cloudProvider:
-            name: "${PLATFORM}" 
-            managed: ${MANAGED}
+            name: "azure" 
+            managed: false
           # only for "aws" or "azure" maybe "gcp"
           cloud:
-            region: ${REGION}
-            image: ${IMAGE_NAME}
+            region: eastus2
+            image: rhcos-47.83.202105220305-0-azure.x86_64.vhd
           # only for "vsphere" - ignored for other
           vsphere:
             networkName: ${VS_NETWORK}
