@@ -3,9 +3,7 @@ kind: Application
 metadata:
   name: ci-scc
   annotations:
-    argocd.argoproj.io/sync-wave: "250"
-  labels:
-    gitops.tier.layer: services    
+    argocd.argoproj.io/sync-wave: "250"  
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
