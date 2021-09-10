@@ -4,6 +4,8 @@ metadata:
   name: ci-scc
   annotations:
     argocd.argoproj.io/sync-wave: "250"  
+  labels:
+    gitops.tier.layer: services    
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -12,9 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: services
   source:
-    path: shared/config/ci/instances/scc
-    repoURL: https://github.com/ncolon-demos/multi-tenancy-gitops-apps.git
-    targetRevision: ocp47-2021-2
+    path: instances/scc
   syncPolicy:
     automated:
       prune: true
